@@ -12,11 +12,15 @@ const Board = (props) => {
         )
     }
 
+    const resultClass = props.winner && "result"
+
     return (
         <div className="wrapper">
             <h1 className="game_title">三目並べ</h1>
             <div className="winner">
-                <h1>{props.winner ? props.winner : props.nextPlayer + ' の番です'}</h1>
+                <h1 className={resultClass}>
+                    {props.winner ? props.winner : props.nextPlayer + ' の番です'}
+                </h1>
             </div>
             <div className="board">
                 <div className="board_row">
